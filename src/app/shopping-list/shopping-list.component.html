@@ -1,0 +1,11 @@
+<div class="content">
+    <div class="header">Hilfe-Bedrüftiger: {{ shoppingList.helped_id }}</div>
+    <div class="description">Zu erledigen bis: {{ shoppingList.due_date }} </div>
+    <div class="metadata">
+            <span *ngFor="let item of shoppingList.item; last as l">
+                Item: {{ item.item_name }} {{ item.quantity }}<span *ngIf="!l">,
+            </span></span>
+    </div>
+    <div *ngIf="shoppingList.status == true" class="extra" style="color: #e66d2d">Status der Einkaufsliste: Erledigt</div>
+    <div *ngIf="shoppingList.status == false" class="extra" style="color: #268000">Status der Einkaufsliste: Offen</div>
+</div>

@@ -1,0 +1,7 @@
+<div class="ui middle aligned selection list">
+    <a *ngFor="let shoppingList of shoppinglists" class="item bs-shopping-list-list-item"
+       [shoppingList]="shoppingList" [routerLink]=shoppingList.id></a>
+    <div *ngIf="!shoppinglists" class="ui active dimmer">
+        <div class="ui large text loader">Daten werden geladen...</div>
+    </div>
+</div>

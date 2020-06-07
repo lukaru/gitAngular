@@ -1,0 +1,51 @@
+<h1 align="center">Detailansicht von Shoppingliste mit ID: {{shoppingList.id}}</h1>
+<div class="ui grid" *ngIf="shoppingList">
+
+
+    <div class="sixteen wide column">
+        <div class="ui divider"></div>
+        <div class="ui grid">
+            <div class="eight wide column">
+                <h4 class="ui header">Items:</h4>
+<!-- items -->
+                <span *ngFor="let item of shoppingList.item;">
+                    {{ item.item_name }}, {{ item.quantity }}x - Preispunkt: {{item.max_price}} Euro<span>,
+                </span></span>
+            </div>
+            <div class="eight wide column" align="center">
+                <h4 class="ui header">Due-Date</h4>
+                {{ shoppingList.due_date }}
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <h2 class="ui header" align="center">Hilfesuchender: {{ shoppingList.helped_id }}</h2>
+        <h2 class="ui header" align="center">Helfer: {{ shoppingList.helper_id }}</h2>
+        <div class="ui divider"></div>
+        <h3 *ngIf="shoppingList.status != true" class="ui header" align="center">Status: Offen</h3>
+        <h3 *ngIf="shoppingList.status == true" class="ui header" align="center">Status: Erledigt</h3>
+        <div class="ui divider"></div>
+
+<!-- reciepts -->
+        <h3 class="ui header">Comments</h3>
+        <p>Hilfesuchender: {{ shoppingList.comment_helper }}</p>
+        <p>Helfer: {{ shoppingList.comment_helped }}</p>
+        <span *ngFor="let reciept of shoppingList.reciept;">
+                   Rechnung: {{ reciept.url }}<span>
+                </span></span>
+    </div>
+
+    <div class="four wide column">
+        <img class="ui large image" *ngIf="shoppingList.reciept && shoppingList.reciept[0]"
+             [src]="shoppingList.reciept[0].url">
+    </div>
+</div>
+
+<button [routerLink]="'/myList'" class="ui red button">
+    Meine Shoppinglisten
+</button>
+
+<a *ngIf="shoppingList.status != true" class="ui  yellow labeled icon
+button"
+   (click)="completeList()">
+    <i class="check icon"></i> Liste abschließen
+</a>

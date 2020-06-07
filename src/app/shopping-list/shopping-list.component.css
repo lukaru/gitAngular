@@ -1,0 +1,7 @@
+.selection {
+    display: flex !important;
+}
+
+.bs-shopping-list-list-item {
+    width: 45% !important;
+}

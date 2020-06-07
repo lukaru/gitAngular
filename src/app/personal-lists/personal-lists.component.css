@@ -1,0 +1,10 @@
+.selection {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.bs-shopping-list-list-item {
+    width: 45% !important;
+    padding-left: 18% !important;
+    margin-left: 3% !important;
+}

@@ -1,0 +1,11 @@
+<div class="ui four item tabs menu">
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+  <a *ngIf="isHelper()" routerLink="lists" routerLinkActive="active" class="item">Find a List</a>
+  <a *ngIf="isHelped()"  routerLink="makeList" routerLinkActive="active" class="item">Make a List</a>
+  <a *ngIf="isLoggedIn()"  routerLink="myList" routerLinkActive="active" class="item">My Lists</a>
+
+  <a routerLink="login" routerLinkActive="active"
+     class="item">{{getLoginLabel()}}</a>
+</div>
+
+<router-outlet></router-outlet>.

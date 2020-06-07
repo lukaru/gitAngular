@@ -1,0 +1,72 @@
+<h1 align="center">Einkaufsliste erstellen</h1>
+<form class="ui large form" [formGroup]="listForm" (ngSubmit)="submitForm()">
+
+    <input type="hidden" name="id">
+
+    <div class="field">
+        <label>Hilfesuchender </label>
+        <input formControlName="helped_id" placeholder="Hier ihre ID eingeben">
+        <div *ngIf=" errors.helped_id" class="ui negative message"> {{errors.helped_id
+            }} </div>
+    </div>
+
+    <div class="field, formDate">
+        <label>Due-Date</label>
+        <input type="date" formControlName="due_date" placeholder="">
+        <div *ngIf=" errors.due_date" class="ui negative message"> {{errors.due_date
+            }} </div>
+    </div>
+
+    <div class="field, formComment">
+        <label>Kommentar für Helfer</label>
+        <textarea formControlName="comment_helped" rows="3"
+                  placeholder="Schreiben Sie, was Sie dem Helfer mitteilen möchten"></textarea>
+        <div *ngIf=" errors.comment_helped" class="ui negative message"> {{errors.comment_helped
+            }} </div>
+    </div>
+
+    <h2>Items: </h2>
+
+    <div class="field ">
+        <input type="hidden" name="id">
+        <div class="field itemfield">
+            <input formControlName="item_name" placeholder="Name des Items">
+        </div>
+    </div>
+
+    <div class="field ">
+        <div class="field itemfield">
+            <input formControlName="quantity" placeholder="Menge">
+        </div>
+    </div>
+
+    <div class="field ">
+        <div class="field itemfield">
+            <input formControlName="max_price" placeholder="Maximaler Preis in Zahlen">
+        </div>
+    </div>
+
+<!--    <div class="field">-->
+<!--        <h1>Items</h1>-->
+<!--        <div class="fields">-->
+<!--            <input type="hidden" name="id">-->
+<!--            <div class="five wide field">-->
+<!--                <input placeholder="Name des Items">-->
+<!--            </div>-->
+<!--            <div class="five wide field">-->
+<!--                <input placeholder="Menge">-->
+<!--            </div>-->
+<!--            <div class="five wide field">-->
+<!--                <input placeholder="Maximaler Preis in Zahlen">-->
+<!--            </div>-->
+<!--            <div class="one wide field">-->
+<!--                <button class="ui large button"-->
+<!--                        type="button" (click)="addItem()">+-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <button type="submit" class="ui red button"
+            [disabled]="listForm.invalid">Speichern
+    </button>
+</form>

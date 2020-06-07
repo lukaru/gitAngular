@@ -1,0 +1,44 @@
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+form {
+    background-color: #dce690;
+    border: 3px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 88%;
+}
+
+form > div {
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-right: 2%;
+}
+
+form > .button {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.formDate {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.formComment {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.itemfield {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+form > h2 {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 27%;
+}

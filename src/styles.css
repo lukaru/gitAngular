@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    width: 90%;
+    padding-top: 3% !important;
+    padding-left: 5% !important;
+    position: relative;
+    background-color: lightgray !important;
+}
+
+html:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url('https://www.kaisersfoodcenter.com/media/site_assets/750624dc37c2e63f8b0b793b204f5cfd/assets/ban2.jpg');
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+img {
+    opacity: 0.2;
+}
+
